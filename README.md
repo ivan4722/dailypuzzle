@@ -38,19 +38,7 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 
 ## Wireframes
 
-(__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.)
-
-/list/create - page for creating a new shopping list
-
-![list create](documentation/list-create.png)
-
-/list - page for showing all shopping lists
-
-![list](documentation/list.png)
-
-/list/slug - page for showing specific shopping list
-
-![list](documentation/list-slug.png)
+![alt text](https://cdn.discordapp.com/attachments/1017249935562903612/1168638306473480345/IMG_2322.jpg?ex=65527e3c&is=6540093c&hm=be75cdfe575bc6d29e96c897d017c45be4126d74384a6055f5d1d0b34b05d598&)
 
 ## Site map
 
