@@ -1,51 +1,36 @@
 The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
 
-(__TODO__: your project name)
+Daily puzzle
 
 # Shoppy Shoperson 
 
 ## Overview
 
-(__TODO__: a brief one or two paragraph, high-level description of your project)
+Similarly to wordle, whoever visits the website will be prompted with a daily puzzle, and a new puzzle will be posted every day at 12 am (est, probably).
 
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
+The site will let users sign in to track their scores, with total puzzles solved, and best streak. There is also a leaderboard with current best streak and most problems solved. Inspiration was taken from https://www.janestreet.com/puzzles/current-puzzle/, however I want to make the puzzle more solvable and quickly to solve, while having it posted every day rather than every month. 
 
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
+There will also be a page to see past puzzles for each day, along with the solutions. 
 
 
 ## Data Model
 
-(__TODO__: a description of your application's data and their relationships to each other) 
-
-The application will store Users, Lists and Items
-
-* users can have multiple lists (via references)
-* each list can have multiple items (by embedding)
-
-(__TODO__: sample documents)
+The application will store Users, best streak, and a list of all problems that have been solved by that user (array of string items, of dates)
 
 An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
+  username: "funusername",
   hash: // a password hash,
-  lists: // an array of references to List documents
+  bestStreak: // an integer storing the user's best streak
+  solved: // a String array storing dates of which puzzles that this user has solved
 }
 ```
 
-An Example List with Embedded Items:
-
+Example list: 
 ```javascript
-{
-  user: // a reference to a User object
-  name: "Breakfast foods",
-  items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
-  ],
-  createdAt: // timestamp
-}
+["10-30-2023","10-31-2023", "11-2-2023"]
 ```
 
 
