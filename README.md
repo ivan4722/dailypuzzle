@@ -38,7 +38,8 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 
 ## Wireframes
 
-![alt text](https://cdn.discordapp.com/attachments/1017249935562903612/1168638306473480345/IMG_2322.jpg?ex=65527e3c&is=6540093c&hm=be75cdfe575bc6d29e96c897d017c45be4126d74384a6055f5d1d0b34b05d598&)
+![alt text](https://media.discordapp.net/attachments/599673872408772660/1168640655266959370/IMG_2323.jpg?ex=6552806c&is=65400b6c&hm=e3282bb73d34f406358df1286f807f9c747fe8534f063baa85fff0846d28218f&=&width=752&height=1004)
+![alt text](https://media.discordapp.net/attachments/599673872408772660/1168640655862530140/IMG_2324.jpg?ex=6552806c&is=65400b6c&hm=19d8bbc56950c417f7b6855ad73d502f0f5f5c7be02d7b16ba6ba019687d6ccc&=&width=752&height=1004)
 
 ## Site map
 
