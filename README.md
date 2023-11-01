@@ -34,40 +34,28 @@ Example list:
 
 ## [Link to Commented First Draft Schema](db.mjs) 
 
-(__TODO__: create a first draft of your Schemas in db.mjs and link to it)
+https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blob/master/db.mjs
 
 ## Wireframes
 
-(__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.)
-
-/list/create - page for creating a new shopping list
-
-![list create](documentation/list-create.png)
-
-/list - page for showing all shopping lists
-
-![list](documentation/list.png)
-
-/list/slug - page for showing specific shopping list
-
-![list](documentation/list-slug.png)
+![alt text](https://media.discordapp.net/attachments/599673872408772660/1168640655266959370/IMG_2323.jpg?ex=6552806c&is=65400b6c&hm=e3282bb73d34f406358df1286f807f9c747fe8534f063baa85fff0846d28218f&=&width=752&height=1004)
+![alt text](https://media.discordapp.net/attachments/599673872408772660/1168640655862530140/IMG_2324.jpg?ex=6552806c&is=65400b6c&hm=19d8bbc56950c417f7b6855ad73d502f0f5f5c7be02d7b16ba6ba019687d6ccc&=&width=752&height=1004)
 
 ## Site map
 
-(__TODO__: draw out a site map that shows how pages are related to each other)
-
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+![alt text](https://media.discordapp.net/attachments/599673872408772660/1169322316606480484/IMG_2334.jpg?ex=6554fb45&is=65428645&hm=eddc7857b803586d12777a37b110a14d4e332738c20d85afa8c7f5d7034285de&=&width=752&height=1004)
 
 ## User Stories or Use Cases
 
 (__TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://en.wikipedia.org/wiki/Use_case))
 
 1. as non-registered user, I can register a new account with the site
-2. as a user, I can log in to the site
-3. as a user, I can create a new grocery list
-4. as a user, I can view all of the grocery lists I've created in a single list
-5. as a user, I can add items to an existing grocery list
-6. as a user, I can cross off items in an existing grocery list
+2. as non-registered and registered user, I can view the leaderboard
+3. as non-registered and registered user, I can answer the question
+4. as non-registered and registered user, I can view past questions and their solutions
+5. as a user, I can log in to the site
+6. as a user, I can answer and track the questions I have answered correctly
+7. as a user, I can see my name on the leaderboard
 
 ## Research Topics
 
