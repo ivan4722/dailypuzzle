@@ -61,16 +61,14 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 
 (__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
 
-* (5 points) Integrate user authentication
-    * I'm going to be using passport for user authentication
-    * And account has been made for testing; I'll email you the password
-    * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
-    * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
-* (4 points) Perform client side form validation using a JavaScript library
-    * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
-    * if you put in a number that's greater than 5, an error message will appear in the dom
-* (5 points) vue.js
-    * used vue.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
+* (3 points) Social media API, email notification API, date/time API
+    * I'm going to use an API so that users can share via twitter/instagram/facebook that they have solved the puzzle
+    * I'm also going to use an API so that users get an email each time a new puzzle is posted. (if they want it)
+    * I'm also going to use a date/time API so that the puzzle is posted at the same time everyday.
+* (2 points) SemanticUI
+    * I want my website to feel smooth and interactive. As a result, I will use semanticUI to make it flow seamlessly.   
+* (6 points) react.js
+    * It looks interesting to me, and I care about how the website looks so I decided to use a frontend framework. 
 
 10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit)
 
@@ -83,6 +81,6 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 
 (__TODO__: list any tutorials/references/etc. that you've based your code off of)
 
-1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
-2. [tutorial on vue.js](https://vuejs.org/v2/guide/) - (add link to source code that was based on this)
+1. [semanticUI docs](https://semantic-ui.com/)
+2. [reactjs examples](https://legacy.reactjs.org/community/examples.html)
 
