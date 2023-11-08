@@ -61,8 +61,8 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 
 (__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
 
-* (5 points) Integrate user authentication
-    * I'm going to be using passport for user authentication
+* (5 points) Vercel
+    * I'm going to be using vercel for deployment
     * And account has been made for testing; I'll email you the password
     * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
     * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
