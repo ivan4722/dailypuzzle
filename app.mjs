@@ -2,10 +2,16 @@ import './config.mjs';
 import express from 'express';
 import './db.mjs';
 import mongoose from 'mongoose';
+import expressSession from 'express-session';
 
-const user = mongoose.model('user');
+const User = mongoose.model('user');
 
 const app = express();
+app.use(expressSession({
+    secret: 'a',
+    resave: false,
+    saveUninitialized: true
+  }));
 
 const questions = new Map();
 
@@ -42,7 +48,9 @@ import url from 'url';
 import path from 'path';
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json()); 
 
+app.use(express.urlencoded({ extended: false }));
 // configure templating to hbs
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -50,6 +58,9 @@ app.set('view engine', 'hbs');
 
 app.get('/', (req,res)=>
 {
+    console.log("user:",req.session.user);
+    let user = req.session.user;
+    //-------------------------------------------------------------------//
     const date = new Date();
     let month = date.getMonth()+1; //month starts from 0 
     let day = date.getDate();
@@ -66,20 +77,21 @@ app.get('/', (req,res)=>
     const d = ''+month+day+year;
     //console.log(d);
     const today = questions.get(d);
+    //-------------------------------------------------------------------//
     if(req.query.solution == answers.get(d))
     {
         const ans = req.query.solution;
-        res.render('correct',{ans});
+        res.render('correct',{ans,user});
     }
     else if(req.query.solution && req.query.solution != answers.get(d))
     {
         const wrong = "wrong answer";
-        res.render('home',{today,wrong});
+        res.render('home',{today,wrong,user});
     }
     else
     {
         const wrong = ''
-        res.render('home',{today,wrong});
+        res.render('home',{today,wrong,user});
     }
 })
 app.get('/login', (req,res)=>
@@ -90,4 +102,47 @@ app.get('/register', (req,res)=>
 {
     res.render('register')
 })
+app.post('/register', async (req, res) => 
+{
+    const { username, password } = req.body;
+    const user = new User({ username, password, bestStreak: 0, solved: [] });
+  
+    try 
+    {
+        const existingUser = await User.findOne({ username });
+        if (existingUser) {
+            const wrong = 'Username taken.'
+            return res.render('register', {wrong});
+          }
+        await user.save();
+        res.redirect('/login');
+    } 
+    catch (err) 
+    {
+        res.status(400).send('Error registering the user.');
+    }
+});
+app.post('/login', async (req, res) => 
+{
+    const { username, password } = req.body;
+  
+    try {
+      const user = await User.findOne({ username, password });
+      if (user) {
+        // Successful login
+        req.session.user = {user: username};
+        res.redirect('/');
+      } else {
+          const wrong = "incorrect username or password"
+        res.render('login', {wrong});
+      }
+    } catch (err) {
+      res.status(400).send('Error logging in.');
+    }
+  });
+  app.get('/logout',(req,res)=>
+  {
+      req.session.user = undefined;
+      res.redirect('/');
+  })
 app.listen(process.env.PORT);

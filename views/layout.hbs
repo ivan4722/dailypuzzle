@@ -4,21 +4,28 @@
     <title>Daily Puzzle</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <div class="account">
-        <div class="buttonbox">
-            <a href="/login">Login</a>
-        </div>
-        <div class="buttonbox">
-            <a href="/register">Register</a>
-        </div>
+        {{#if user}}
+            <div class="buttonbox">
+                <a>Logged in as {{user.user}}</a>
+            </div>
+            <div class="buttonbox">
+                <a href="/logout">Logout</a>
+            </div>
+        {{else}}
+            <div class="buttonbox">
+                <a href="/login">Login</a>
+            </div>
+            <div class="buttonbox">
+                <a href="/register">Register</a>
+            </div>
+        {{/if}}
     </div>
-    
-
 </head>
 <body>
     <a href="/">
-    <img src="/img/img2.png" alt="a">
-</a>
+        <img src="/img/img2.png" alt="a">
+    </a>
     
-        {{{body}}}
+    {{{body}}}
 </body>
 </html>

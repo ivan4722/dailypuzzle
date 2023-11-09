@@ -35,6 +35,9 @@ img {
 html, body {
     font-family: "Libre Franklin", sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 h1 {
     text-align: center;
     margin: 0;
