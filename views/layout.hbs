@@ -4,6 +4,9 @@
     <title>Daily Puzzle</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <div class="account">
+            <div class="buttonbox">
+                <a href="/leaderboard">Leaderboard</a>
+            </div>
         {{#if user}}
             <div class="buttonbox">
                 <a>Logged in as {{user.user}}</a>
@@ -19,6 +22,7 @@
                 <a href="/register">Register</a>
             </div>
         {{/if}}
+
     </div>
 </head>
 <body>

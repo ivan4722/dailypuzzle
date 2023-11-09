@@ -12,6 +12,7 @@
     right: 10px;
     
 }
+
 .buttonbox {
     display: inline-block;
     background: transparent; 
@@ -22,6 +23,7 @@
     border-radius: 5px;
     text-decoration: none; 
 }
+
 .buttonbox a {
     text-decoration: none; 
     color: #4f7ee4;
@@ -44,4 +46,20 @@ h1 {
 }
 body {
     background-color: rgb(186, 200, 231); 
+}
+.leaderboard-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+table{
+    border-collapse: collapse;
+    width: 60%;
+    margin-top: 20px;
+    border-spacing: 0;
+}
+th, td {
+    border: 3px solid #4f7ee4;
+    padding: 10px;
+    text-align: center;
 }

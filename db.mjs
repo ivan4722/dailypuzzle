@@ -12,7 +12,7 @@ const user = new mongoose.Schema({
     type: String,
     required: true,
   },
-  bestStreak: {
+  totalSolved: {
     type: Number,
     required: true,
   },

@@ -55,16 +55,25 @@ app.use(express.urlencoded({ extended: false }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-
-app.get('/', (req,res)=>
+app.get('/leaderboard', async (req,res)=>
 {
-    console.log("user:",req.session.user);
+    let leaderboard = await User.find().sort({ totalSolved: -1 });
+    leaderboard = leaderboard.map(user => ({
+        username: user.username,
+        totalSolved: user.totalSolved,
+      }));
+      console.log(leaderboard);
+      res.render('leaderboard', {leaderboard})
+})
+app.get('/', async (req,res)=>
+{
+    //console.log("user:",req.session.user);
     let user = req.session.user;
     //-------------------------------------------------------------------//
-    const date = new Date();
+    let date = new Date();
     let month = date.getMonth()+1; //month starts from 0 
     let day = date.getDate();
-    const year = date.getFullYear()-2000;
+    let year = date.getFullYear()-2000;
     if(month<10)
     {
         month = '0'+month;
@@ -74,13 +83,24 @@ app.get('/', (req,res)=>
         day = '0'+day;
     }
     
-    const d = ''+month+day+year;
+    let d = ''+month+day+year;
     //console.log(d);
-    const today = questions.get(d);
+    let today = questions.get(d);
     //-------------------------------------------------------------------//
     if(req.query.solution == answers.get(d))
     {
-        const ans = req.query.solution;
+        let ans = req.query.solution;
+        if(user)
+        {
+            console.log("aa");
+            let name = user.user;
+            const filter = { username: name }
+            const update = {$push: { solved: today}};
+            const update2 = {$inc: {totalSolved: 1}};
+            await User.updateOne(filter, update);
+            await User.updateOne(filter, update2);
+            
+        }
         res.render('correct',{ans,user});
     }
     else if(req.query.solution && req.query.solution != answers.get(d))
@@ -105,7 +125,7 @@ app.get('/register', (req,res)=>
 app.post('/register', async (req, res) => 
 {
     const { username, password } = req.body;
-    const user = new User({ username, password, bestStreak: 0, solved: [] });
+    const user = new User({ username, password, totalSolved: 0, solved: [] });
   
     try 
     {
@@ -145,4 +165,4 @@ app.post('/login', async (req, res) =>
       req.session.user = undefined;
       res.redirect('/');
   })
-app.listen(process.env.PORT);
+app.listen(process.env.PORT ?? 3000);

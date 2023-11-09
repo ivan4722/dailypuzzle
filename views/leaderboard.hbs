@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <title>Leaderboard</title>
+</head>
+<body>
+    <h1>Leaderboard</h1>
+    <div class="leaderboard-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Total Solved</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each leaderboard}}
+                    <tr>
+                        <td>{{this.username}}</td>
+                        <td>{{this.totalSolved}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
