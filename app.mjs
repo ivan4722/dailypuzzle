@@ -3,6 +3,12 @@ import express from 'express';
 import './db.mjs';
 import mongoose from 'mongoose';
 import expressSession from 'express-session';
+import { postTweet } from './twitter.mjs';
+
+// Example: Post a tweet
+const tweetText = 'Hello, Twitter! This is my first tweet using the Twitter API and JavaScript. #TwitterAPI';
+
+postTweet(tweetText);
 
 const User = mongoose.model('user');
 
@@ -13,35 +19,36 @@ app.use(expressSession({
     saveUninitialized: true
   }));
 
-const questions = new Map();
 
-questions.set('110223', "1+1");
-questions.set('110323', "2+2");
-questions.set('110423', "3+3");
-questions.set('110523', "4+4");
-questions.set('110623', "5+5");
-questions.set('110723', "6+6");
-questions.set('110823', "7+7");
-questions.set('110923', "8+8");
-questions.set('111023', "9+9");
-questions.set('111123', "10+10");
-questions.set('111223', "11+11");
-questions.set('111323', "12+12");
+const questions = new Map();
+//questions from Introduction to Counting & Probability by David Patrick
+questions.set('110923', "In how many ways can a President and a Vice-President be chosen from a group of 4 people? (assuming that the president and the vice president cannot be the same person)");
+questions.set('111023', "Coach is preparing a 5 person starting line up for his team. There are 12 total players, and 2 all star players from last year Chris and Andrew are guaranteed a spot on the team. How many starting lineups are possible?");
+questions.set('111123', "15 students in a chemistry class have lab every week. Each week, they are randomly divided into 5 groups of 3 students each. What is the probability that 3 students, Bob, Andrew, and Sally are in the same lab group this week? Enter your answer as a simplfied fraction.");
+questions.set('111223', "4+4");
+questions.set('111323', "5+5");
+questions.set('111423', "6+6");
+questions.set('111523', "6 points are placed evenly around a circle labeled A,B,C,D,E, and F at random. What is the probability that two triangles ABC and DEF do not overlap? Enter your answer as a simplified fraction.");
+questions.set('111623', "8+8");
+questions.set('111723', "9+9");
+questions.set('111823', "10+10");
+questions.set('111923', "11+11");
+questions.set('112023', "12+12");
 
 const answers = new Map();
 
-answers.set('110223', "2");
-answers.set('110323', "4");
-answers.set('110423', "6");
-answers.set('110523', "8");
-answers.set('110623', "10");
-answers.set('110723', "12");
-answers.set('110823', "14");
-answers.set('110923', "16");
-answers.set('111023', "18");
-answers.set('111123', "20");
-answers.set('111223', "22");
-answers.set('111323', "24");
+answers.set('110923', "12");
+answers.set('111023', "120");
+answers.set('111123', "1/91");
+answers.set('111223', "8");
+answers.set('111323', "10");
+answers.set('111423', "12");
+answers.set('111523', "3/10");
+answers.set('111623', "16");
+answers.set('111723', "18");
+answers.set('111823', "20");
+answers.set('111923', "22");
+answers.set('112023', "24");
 
 // set up express static
 import url from 'url';
@@ -99,6 +106,7 @@ app.get('/', async (req,res)=>
             const update2 = {$inc: {totalSolved: 1}};
             await User.updateOne(filter, update);
             await User.updateOne(filter, update2);
+            postTweet("congrats to "+name+" for solving today's puzzle!");
             
         }
         res.render('correct',{ans,user});

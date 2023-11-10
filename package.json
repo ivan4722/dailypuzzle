@@ -15,6 +15,9 @@
     "fomantic-ui": "^2.9.3",
     "hbs": "^4.2.0",
     "mongoose": "^8.0.0",
-    "twitter": "^1.7.1"
+    "twitter": "^1.7.1",
+    "twitter-api-client": "^1.6.1",
+    "twitter-api-v2": "^1.15.2",
+    "twitter-v2": "^1.1.0"
   }
 }
