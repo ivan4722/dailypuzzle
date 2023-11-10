@@ -99,14 +99,17 @@ app.get('/', async (req,res)=>
         let ans = req.query.solution;
         if(user)
         {
-            console.log("aa");
             let name = user.user;
             const filter = { username: name }
-            const update = {$push: { solved: today}};
-            const update2 = {$inc: {totalSolved: 1}};
-            await User.updateOne(filter, update);
-            await User.updateOne(filter, update2);
-            postTweet("congrats to "+name+" for solving today's puzzle!");
+            const a = await User.findOne(filter);
+            if(!a.solved.includes(today))
+            {
+                const update = {$push: { solved: today}};
+                const update2 = {$inc: {totalSolved: 1}};
+                await User.updateOne(filter, update);
+                await User.updateOne(filter, update2);
+                postTweet("congrats to "+name+" for solving today's puzzle!");
+            }
             
         }
         res.render('correct',{ans,user});
