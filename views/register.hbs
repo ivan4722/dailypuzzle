@@ -4,14 +4,20 @@
 </head>
 <body>
 
-        <div class="puzzle-box">
-                <h3>Register:</h3>
-                <form method="POST" action="">
-                Username: <input type="text" name="username" value=""><br>
-                Password:&nbsp; <input type="text" name="password" value=""><br>
-                <input type="submit" value = "Register">
+        <div class="ui raised very padded text container segment">
+                <h2 class="ui header">Register</h2>
+                <form class="ui form" method="POST" action="">
+                <div class="field">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="">
+                </div>
+                <div class="field">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="">
+                </div>
+                <button class="ui button" type="submit" value = "Register">Submit</button>
                 </form>
-
                 {{wrong}}
         </div>
+        
 </body>

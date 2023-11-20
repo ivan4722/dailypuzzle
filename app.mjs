@@ -64,13 +64,14 @@ app.set('view engine', 'hbs');
 
 app.get('/leaderboard', async (req,res)=>
 {
+    let user = req.session.user;
     let leaderboard = await User.find().sort({ totalSolved: -1 });
     leaderboard = leaderboard.map(user => ({
         username: user.username,
         totalSolved: user.totalSolved,
       }));
       console.log(leaderboard);
-      res.render('leaderboard', {leaderboard})
+      res.render('leaderboard', {leaderboard,user})
 })
 app.get('/', async (req,res)=>
 {

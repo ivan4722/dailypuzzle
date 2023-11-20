@@ -22,6 +22,10 @@ img {
 html, body {
     font-family: "Libre Franklin", sans-serif;
 }
+.center-content {
+    text-align: center;
+    margin: auto;
+}
 html{
     scroll-behavior: smooth;
 }

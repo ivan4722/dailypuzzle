@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Daily Puzzle</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-    
+</head>
+
+<body>
     <div class="account">
         <a href="/leaderboard">
             <button class="ui button">Leaderboard</button>
         </a>
         {{#if user}}
-            <a>
-                <button class="ui blue button">Logged in as {{user.user}}</button>
-            </a>
-            <a href="/logout">
-                <button class="ui button">Logout</button>
-            </a>
+        <a>
+            <button class="ui blue button">Logged in as {{user.user}}</button>
+        </a>
+        <a href="/logout">
+            <button class="ui button">Logout</button>
+        </a>
         {{else}}
-            <a href="/login">
-                <button class="ui blue button">Login</button>
-            </a>
-            <a href="/register">
-                <button class="ui button">Register</button>
-            </a>
+        <a href="/login">
+            <button class="ui blue button">Login</button>
+        </a>
+        <a href="/register">
+            <button class="ui button">Register</button>
+        </a>
         {{/if}}
-
     </div>
-</head>
-<body>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
-    <a href="/">
-        <img src="/img/img2.png" alt="a">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+    <a href="/" class="center-content">
+        <h1 class="ui header">
+            <img class="ui image" src="/img/icon.png">
+            <div class="content">
+                Daily Puzzle
+            </div>
+        </h1>
     </a>
-    
+
     {{{body}}}
 </body>
+
 </html>
