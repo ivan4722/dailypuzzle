@@ -5,23 +5,17 @@
 </head>
 <body>
     <h1>Leaderboard</h1>
-    <div class="leaderboard-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Total Solved</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each leaderboard}}
-                    <tr>
-                        <td>{{this.username}}</td>
-                        <td>{{this.totalSolved}}</td>
-                    </tr>
-                {{/each}}
-            </tbody>
-        </table>
+    <div class = "ui container">
+        <div class="ui celled list">
+        {{#each leaderboard}}
+            <div class="item">
+                <div class="content">
+                    <div class="header">{{this.username}}</div>
+                    {{this.totalSolved}} Points
+                </div>
+            </div>
+        {{/each}}
+        </div>
     </div>
 </body>
 </html>

@@ -3,30 +3,33 @@
 <head>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Daily Puzzle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    
     <div class="account">
-            <div class="buttonbox">
-                <a href="/leaderboard">Leaderboard</a>
-            </div>
+        <a href="/leaderboard">
+            <button class="ui button">Leaderboard</button>
+        </a>
         {{#if user}}
-            <div class="buttonbox">
-                <a>Logged in as {{user.user}}</a>
-            </div>
-            <div class="buttonbox">
-                <a href="/logout">Logout</a>
-            </div>
+            <a>
+                <button class="ui blue button">Logged in as {{user.user}}</button>
+            </a>
+            <a href="/logout">
+                <button class="ui button">Logout</button>
+            </a>
         {{else}}
-            <div class="buttonbox">
-                <a href="/login">Login</a>
-            </div>
-            <div class="buttonbox">
-                <a href="/register">Register</a>
-            </div>
+            <a href="/login">
+                <button class="ui blue button">Login</button>
+            </a>
+            <a href="/register">
+                <button class="ui button">Register</button>
+            </a>
         {{/if}}
 
     </div>
 </head>
 <body>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
     <a href="/">
         <img src="/img/img2.png" alt="a">
     </a>
