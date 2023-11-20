@@ -22,33 +22,33 @@ app.use(expressSession({
 
 const questions = new Map();
 //questions from Introduction to Counting & Probability by David Patrick
-questions.set('110923', "In how many ways can a President and a Vice-President be chosen from a group of 4 people? (assuming that the president and the vice president cannot be the same person)");
-questions.set('111023', "Coach is preparing a 5 person starting line up for his team. There are 12 total players, and 2 all star players from last year Chris and Andrew are guaranteed a spot on the team. How many starting lineups are possible?");
-questions.set('111123', "15 students in a chemistry class have lab every week. Each week, they are randomly divided into 5 groups of 3 students each. What is the probability that 3 students, Bob, Andrew, and Sally are in the same lab group this week? Enter your answer as a simplfied fraction.");
-questions.set('111223', "4+4");
-questions.set('111323', "5+5");
-questions.set('111423', "6+6");
-questions.set('111523', "6 points are placed evenly around a circle labeled A,B,C,D,E, and F at random. What is the probability that two triangles ABC and DEF do not overlap? Enter your answer as a simplified fraction.");
-questions.set('111623', "8+8");
-questions.set('111723', "9+9");
-questions.set('111823', "10+10");
-questions.set('111923', "11+11");
-questions.set('112023', "12+12");
+questions.set('112023', "In how many ways can a President and a Vice-President be chosen from a group of 4 people? (assuming that the president and the vice president cannot be the same person)");
+questions.set('112123', "Coach is preparing a 5 person starting line up for his team. There are 12 total players, and 2 all star players from last year Chris and Andrew are guaranteed a spot on the team. How many starting lineups are possible?");
+questions.set('112223', "15 students in a chemistry class have lab every week. Each week, they are randomly divided into 5 groups of 3 students each. What is the probability that 3 students, Bob, Andrew, and Sally are in the same lab group this week? Enter your answer as a simplfied fraction.");
+questions.set('112323', "My friend and I are hoping to meet for lunch. We each arrive at the restaurant at a random time between 12pm and 1pm, stay for 15 minutes, and leave (if we don't see each other). What is the probability we will meet each other while at the restaurant? For example, If I show up at 12:10 and my friend shows up at 12:19, we will meet. However, if I arrive at 12:50 and my friend shows up at 12:20, we will not meet. Enter your answer as a simplified fraction.");
+questions.set('112423', "What is the probability that a random rearrangement of the letters in the word \"MATHEMATICS\" will begin with the letters \"MATH\"? Enter your answer as a simplified fraction.");
+questions.set('112523', "A bag has 4 red and 6 blue marbles. A marble is selected and not replaced, then a second is selected. What is the probability that both are the same color? Enter your answer as a simplified fraction.");
+questions.set('112623', "6 points are placed evenly around a circle labeled A,B,C,D,E, and F at random. What is the probability that two triangles ABC and DEF do not overlap? Enter your answer as a simplified fraction.");
+questions.set('112723', "8+8");
+questions.set('112823', "9+9");
+questions.set('112923', "10+10");
+questions.set('113023', "11+11");
+questions.set('120123', "12+12");
 
 const answers = new Map();
 
-answers.set('110923', "12");
-answers.set('111023', "120");
-answers.set('111123', "1/91");
-answers.set('111223', "8");
-answers.set('111323', "10");
-answers.set('111423', "12");
-answers.set('111523', "3/10");
-answers.set('111623', "16");
-answers.set('111723', "18");
-answers.set('111823', "20");
-answers.set('111923', "22");
-answers.set('112023', "24");
+answers.set('112023', "12");
+answers.set('112123', "120");
+answers.set('112223', "1/91");
+answers.set('112323', "7/16");
+answers.set('112423', "1/990");
+answers.set('112523', "7/15");
+answers.set('112623', "3/10");
+answers.set('112723', "16");
+answers.set('112823', "18");
+answers.set('112923', "20");
+answers.set('113023', "22");
+answers.set('113123', "24");
 
 // set up express static
 import url from 'url';

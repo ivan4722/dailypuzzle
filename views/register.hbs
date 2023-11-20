@@ -1,23 +1,28 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 <body>
-
-        <div class="ui raised very padded text container segment">
-                <h2 class="ui header">Register</h2>
-                <form class="ui form" method="POST" action="">
-                <div class="field">
+    <div class="ui raised very padded text container segment">
+        <h2 class="ui header">Register</h2>
+        <form id="registrationForm" class="ui form" method="POST" action="">
+            <div class="field">
                 <label>Username</label>
-                <input type="text" name="username" placeholder="">
-                </div>
-                <div class="field">
+                <input type="text" id="username" name="username" placeholder="">
+                <span id="usernameError" class="error"></span>
+            </div>
+            <div class="field">
                 <label>Password</label>
-                <input type="password" name="password" placeholder="">
-                </div>
-                <button class="ui button" type="submit" value = "Register">Submit</button>
-                </form>
-                {{wrong}}
-        </div>
-        
+                <input type="password" id="password" name="password" placeholder="">
+                <span id="passwordError" class="error"></span>
+            </div>
+            <button class="ui button" type="submit" value="Register">Submit</button>
+        </form>
+        {{wrong}}
+    </div>
+
+    <!-- Include the main.js script -->
+    <script src="javascripts/main.js"></script>
 </body>
+</html>

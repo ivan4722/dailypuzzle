@@ -2,7 +2,6 @@ import { TwitterApi } from 'twitter-api-v2';
 import { config } from 'dotenv';
 config();
 //https://twitter.com/ivan4722
-// Your code using TwitterApi here
 const client = new TwitterApi({
     appKey: process.env.TWITTER_CONSUMER_KEY,
     appSecret: process.env.TWITTER_CONSUMER_SECRET,
@@ -19,6 +18,7 @@ const client = new TwitterApi({
     } 
     catch (error) 
     {
+      console.log(tweetText);
       console.error(`Failed to post tweet: ${error}`);
     }
   }

@@ -62,15 +62,17 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 (__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
 
 * (3 points) Social media API, email notification API, date/time API
-    * I'm going to use an API so that users can share via twitter/instagram/facebook that they have solved the puzzle
-    * I'm also going to use an API so that users get an email each time a new puzzle is posted. (if they want it)
+    * I'm going to use the twitter API to post when a user solves a puzzle.
+    * I'm also going to use a email API to email users to remind them to try the new problem if they sign up with email.
     * I'm also going to use a date/time API so that the puzzle is posted at the same time everyday.
 * (2 points) SemanticUI
-    * I want my website to feel smooth and interactive. As a result, I will use semanticUI to make it flow seamlessly.   
-* (6 points) react.js
-    * It looks interesting to me, and I care about how the website looks so I decided to use a frontend framework. 
+    * I want my website to be aesthetically pleasing, so I will use semantic UI custom css to do so.
+* (3 points) Perform client side form validation using custom JavaScript or JavaScript library
+    * I dont want users to just make their password like "a" or something redundant, so I will ensure users submit passwords with constraints through the registration form and display error messages through dom manipulation.
 
-10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit)
+8 points total out of 10 required points (___TODO__: addtional points will __not__ count for extra credit)
+
+I will look into the other topics for other research topics, I decided to not do react. 
 
 
 ## [Link to Initial Main Project File](app.mjs) 
@@ -83,3 +85,5 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 
 1. [semanticUI docs](https://semantic-ui.com/)
 2. [reactjs examples](https://legacy.reactjs.org/community/examples.html)
+3. [form verification through the dom](https://www.w3schools.com/jsref/dom_obj_form.asp)
+4. [twitter API](https://developer.twitter.com/en/docs/twitter-api)
