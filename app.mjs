@@ -2,8 +2,10 @@ import './config.mjs';
 import express from 'express';
 import './db.mjs';
 import mongoose from 'mongoose';
+import { DateTime } from 'luxon';
 import expressSession from 'express-session';
 import { postTweet } from './twitter.mjs';
+import argon2 from 'argon2';
 
 // Example: Post a tweet
 const tweetText = 'Hello, Twitter! This is my first tweet using the Twitter API and JavaScript. #TwitterAPI';
@@ -11,6 +13,7 @@ const tweetText = 'Hello, Twitter! This is my first tweet using the Twitter API 
 postTweet(tweetText);
 
 const User = mongoose.model('user');
+const Suggestion = mongoose.model('suggestion');
 
 const app = express();
 app.use(expressSession({
@@ -53,6 +56,7 @@ answers.set('113123', "24");
 // set up express static
 import url from 'url';
 import path from 'path';
+import { ppid } from 'process';
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json()); 
@@ -66,32 +70,28 @@ app.get('/leaderboard', async (req,res)=>
 {
     let user = req.session.user;
     let leaderboard = await User.find().sort({ totalSolved: -1 });
-    leaderboard = leaderboard.map(user => ({
+    leaderboard = leaderboard.map(user => ({ //higher order function 1
         username: user.username,
         totalSolved: user.totalSolved,
       }));
-      console.log(leaderboard);
-      res.render('leaderboard', {leaderboard,user})
+    leaderboard = leaderboard.filter(user => user.totalSolved > 0); //higher order function 2
+    console.log(leaderboard);
+    res.render('leaderboard', {leaderboard,user})
 })
 app.get('/', async (req,res)=>
 {
     //console.log("user:",req.session.user);
     let user = req.session.user;
-    //-------------------------------------------------------------------//
-    let date = new Date();
-    let month = date.getMonth()+1; //month starts from 0 
-    let day = date.getDate();
-    let year = date.getFullYear()-2000;
-    if(month<10)
-    {
-        month = '0'+month;
-    }
-    if(day<10)
-    {
-        day = '0'+day;
-    }
-    
-    let d = ''+month+day+year;
+    //--------------------------------time zone config-----------------------------------//
+    const dateTime = DateTime.now().setZone('America/New_York');
+
+    const month = dateTime.month.toString().padStart(2, '0');
+    const day = dateTime.day.toString().padStart(2, '0');
+    const year = dateTime.year.toString().slice(-2);
+
+    const d = `${month}${day}${year}`;
+
+    console.log(d);
     //console.log(d);
     let today = questions.get(d);
     //-------------------------------------------------------------------//
@@ -128,53 +128,79 @@ app.get('/', async (req,res)=>
 })
 app.get('/login', (req,res)=>
 {
-    res.render('login')
+    res.render('login');
 })
 app.get('/register', (req,res)=>
 {
-    res.render('register')
+    res.render('register');
 })
 app.post('/register', async (req, res) => 
 {
     const { username, password } = req.body;
-    const user = new User({ username, password, totalSolved: 0, solved: [] });
-  
     try 
     {
         const existingUser = await User.findOne({ username });
-        if (existingUser) {
-            const wrong = 'Username taken.'
-            return res.render('register', {wrong});
-          }
+        if (existingUser) 
+        {
+            const wrong = 'Username taken.';
+            return res.render('register', { wrong });
+        }
+        const hashedPassword = await argon2.hash(password);
+
+        const user = new User({ username, password: hashedPassword, totalSolved: 0, solved: [] });
         await user.save();
+
         res.redirect('/login');
-    } 
-    catch (err) 
-    {
+    } catch (err) {
         res.status(400).send('Error registering the user.');
     }
 });
-app.post('/login', async (req, res) => 
-{
+app.post('/login', async (req, res) => {
     const { username, password } = req.body;
-  
+
     try {
-      const user = await User.findOne({ username, password });
-      if (user) {
-        // Successful login
-        req.session.user = {user: username};
-        res.redirect('/');
-      } else {
-          const wrong = "incorrect username or password"
-        res.render('login', {wrong});
-      }
+        const user = await User.findOne({ username });
+
+        if (user) {
+            const passwordMatch = await argon2.verify(user.password, password);
+
+            if (passwordMatch) {
+                // Successful login
+                req.session.user = { user: username }; // Use the correct property name
+                res.redirect('/');
+            } else {
+                const wrong = 'Incorrect username or password.';
+                res.render('login', { wrong });
+            }
+        } else {
+            const wrong = 'Incorrect username or password.';
+            res.render('login', { wrong });
+        }
     } catch (err) {
-      res.status(400).send('Error logging in.');
+        console.error(err);
+        res.status(500).send('Error logging in.');
     }
-  });
-  app.get('/logout',(req,res)=>
-  {
-      req.session.user = undefined;
-      res.redirect('/');
-  })
+});
+app.get('/logout',(req,res)=>
+{
+    req.session.user = undefined;
+    res.redirect('/');
+});
+app.get('/suggest',(req,res)=>
+{
+    res.render('suggest');
+});
+app.post('/suggest', async (req,res)=>
+{
+    const {suggestion,name}=req.body;
+    console.log(req.body);
+    const s = new Suggestion({suggestion,name});
+    await s.save();
+    res.redirect('/thankyou');
+});
+app.get('/thankyou', (req,res)=>
+{
+    res.render('thankyou');
+})
+
 app.listen(process.env.PORT ?? 3000);

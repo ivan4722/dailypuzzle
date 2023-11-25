@@ -22,6 +22,17 @@ const user = new mongoose.Schema({
   },
 });
 
+const suggestionSchema = new mongoose.Schema({
+  suggestion: {
+    type: String,
+    required: true, 
+  },
+  name: {
+    type: String,
+    required: false,
+  },
+});
 mongoose.model('user', user);
+mongoose.model('suggestion', suggestionSchema);
 //console.log(process.env.DSN);
 mongoose.connect(process.env.DSN);
