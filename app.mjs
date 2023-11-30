@@ -124,7 +124,7 @@ app.get('/leaderboard', async (req,res)=>
         totalSolved: user.totalSolved,
       }));
     leaderboard = leaderboard.filter(user => user.totalSolved > 0); //higher order function 2
-    if(req.query.name)
+    if(req.query.name) //form 1
     {
       leaderboard = leaderboard.filter(f => f.username.includes(req.query.name));
     }
@@ -161,7 +161,7 @@ app.get('/', async (req,res)=>
         sol = 772;
     }
     //-------------------------------------------------------------------//
-    if(req.query.solution == sol)
+    if(req.query.solution == sol) //form 2
     {
 
         let ans = req.query.solution;
@@ -258,7 +258,7 @@ app.get('/suggest',(req,res)=>
 });
 app.post('/suggest', async (req,res)=>
 {
-    const {suggestion,name}=req.body;
+    const {suggestion,name}=req.body; //form 3
     console.log(req.body);
     const s = new Suggestion({suggestion,name});
     await s.save();
