@@ -38,12 +38,11 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 
 ## Wireframes
 
-![alt text](https://media.discordapp.net/attachments/599673872408772660/1168640655266959370/IMG_2323.jpg?ex=6552806c&is=65400b6c&hm=e3282bb73d34f406358df1286f807f9c747fe8534f063baa85fff0846d28218f&=&width=752&height=1004)
-![alt text](https://media.discordapp.net/attachments/599673872408772660/1168640655862530140/IMG_2324.jpg?ex=6552806c&is=65400b6c&hm=19d8bbc56950c417f7b6855ad73d502f0f5f5c7be02d7b16ba6ba019687d6ccc&=&width=752&height=1004)
+![alt text](https://media.discordapp.net/attachments/895509152028319744/1179912156251160596/IMG_2472.jpg?ex=657b81d3&is=65690cd3&hm=b55b263ef36bb80f01f7d24eaf53503e1bcb09f946f4a7f3d48bc91e314d7939&=&format=webp&width=634&height=846)
 
 ## Site map
 
-![alt text](https://media.discordapp.net/attachments/599673872408772660/1169322316606480484/IMG_2334.jpg?ex=6554fb45&is=65428645&hm=eddc7857b803586d12777a37b110a14d4e332738c20d85afa8c7f5d7034285de&=&width=752&height=1004)
+![alt text](https://media.discordapp.net/attachments/895509152028319744/1179912155622023270/IMG_2471.jpg?ex=657b81d3&is=65690cd3&hm=c5ed6e9fc4430d18cd7f27c99652010ebcbcddf4ee163b2800989704a89309c8&=&format=webp&width=634&height=846)
 
 ## User Stories or Use Cases
 
@@ -52,10 +51,9 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 1. as non-registered user, I can register a new account with the site
 2. as non-registered and registered user, I can view the leaderboard
 3. as non-registered and registered user, I can answer the question
-4. as non-registered and registered user, I can view past questions and their solutions
-5. as a user, I can log in to the site
-6. as a user, I can answer and track the questions I have answered correctly
-7. as a user, I can see my name on the leaderboard
+4. as a user, I can log in to the site
+5. as a user, I can see my name on the leaderboard
+6. as a non-registered and registered user, I can suggest a question
 
 ## Research Topics
 
@@ -72,10 +70,7 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 * (1 points) Lodash
     * I was exploring array operations and stumbled upon the Lodash library, and thought it was interesting how many operations there were, although I might not implement any of the special operations 
 
-8 points total out of 10 required points (___TODO__: addtional points will __not__ count for extra credit)
-
-I will look into the other topics for other research topics, I decided to not do react. 
-
+10 points total out of 10 required points (___TODO__: addtional points will __not__ count for extra credit)
 
 ## [Link to Initial Main Project File](app.mjs) 
 
