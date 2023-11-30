@@ -3,6 +3,6 @@
 module load gcc-11.2  
 
 
-/usr/local/lib/node_modules/pm2/bin/pm2 reload all
+/opt/final-project-ivan4722/ node app.mjs
 
 
