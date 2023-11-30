@@ -69,6 +69,8 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
     * I want my website to be aesthetically pleasing, so I will use semantic UI custom css to do so.
 * (3 points) Perform client side form validation using custom JavaScript or JavaScript library
     * I dont want users to just make their password like "a" or something redundant, so I will ensure users submit passwords with constraints through the registration form and display error messages through dom manipulation.
+* (1 points) Lodash
+    * I was exploring array operations and stumbled upon the Lodash library, and thought it was interesting how many operations there were, although I might not implement any of the special operations 
 
 8 points total out of 10 required points (___TODO__: addtional points will __not__ count for extra credit)
 
@@ -88,3 +90,4 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 3. [form verification through the dom](https://www.w3schools.com/jsref/dom_obj_form.asp)
 4. [twitter API](https://developer.twitter.com/en/docs/twitter-api)
 5. [semantic UI css](https://cdnjs.com/libraries/semantic-ui)
+6. [lodash docs](https://lodash.com/docs/)
