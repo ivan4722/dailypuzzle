@@ -5,7 +5,6 @@ import mongoose from 'mongoose';
 import { DateTime } from 'luxon';
 import expressSession from 'express-session';
 import { postTweet } from './twitter.mjs';
-import argon2 from 'argon2';
 import _ from 'lodash';
 
 const User = mongoose.model('user');
@@ -173,7 +172,7 @@ app.get('/', async (req,res)=>
             if(!a.solved.includes(today))
             {
                 const update = {$push: { solved: today}};
-                const update2 = {$inc: {totalSolved: 1}}; 
+                const update2 = {$inc: {totalSolved: 1}};
                 await User.updateOne(filter, update);
                 await User.updateOne(filter, update2);
                 postTweet("congrats to "+name+" for solving today's puzzle!");
@@ -204,47 +203,39 @@ app.get('/register', (req,res)=>
 app.post('/register', async (req, res) => 
 {
     const { username, password } = req.body;
+    const user = new User({ username, password, totalSolved: 0, solved: [] });
+  
     try 
     {
         const existingUser = await User.findOne({ username });
-        if (existingUser) 
-        {
-            const wrong = 'Username taken.';
-            return res.render('register', { wrong });
-        }
-        const hashedPassword = await argon2.hash(password);
-
-        const user = new User({ username, password: hashedPassword, totalSolved: 0, solved: [] });
+        if (existingUser) {
+            const wrong = 'Username taken.'
+            return res.render('register', {wrong});
+          }
         await user.save();
-
         res.redirect('/login');
-    } catch (err) {
+    } 
+    catch (err) 
+    {
         res.status(400).send('Error registering the user.');
     }
 });
-app.post('/login', async (req, res) => {
+app.post('/login', async (req, res) => 
+{
     const { username, password } = req.body;
-
+  
     try {
-        const user = await User.findOne({ username });
-
-        if (user) {
-            const passwordMatch = await argon2.verify(user.password, password);
-
-            if (passwordMatch) {
-                req.session.user = { user: username }; 
-                res.redirect('/');
-            } else {
-                const wrong = 'Incorrect username or password.';
-                res.render('login', { wrong });
-            }
-        } else {
-            const wrong = 'Incorrect username or password.';
-            res.render('login', { wrong });
-        }
+      const user = await User.findOne({ username, password });
+      if (user) {
+        // Successful login
+        req.session.user = {user: username};
+        res.redirect('/');
+      } else {
+          const wrong = "incorrect username or password"
+        res.render('login', {wrong});
+      }
     } catch (err) {
-        console.error(err);
-        res.status(500).send('Error logging in.');
+      res.status(400).send('Error logging in.');
     }
 });
 app.get('/logout',(req,res)=>
