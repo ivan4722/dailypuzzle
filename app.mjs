@@ -76,6 +76,10 @@ app.get('/leaderboard', async (req,res)=>
       }));
     leaderboard = leaderboard.filter(user => user.totalSolved > 0); //higher order function 2
     console.log(leaderboard);
+    if(req.query.name)
+    {
+      leaderboard = leaderboard.filter(f => f.username.includes(req.query.name));
+    }
     res.render('leaderboard', {leaderboard,user})
 })
 app.get('/', async (req,res)=>
@@ -165,8 +169,7 @@ app.post('/login', async (req, res) => {
             const passwordMatch = await argon2.verify(user.password, password);
 
             if (passwordMatch) {
-                // Successful login
-                req.session.user = { user: username }; // Use the correct property name
+                req.session.user = { user: username }; 
                 res.redirect('/');
             } else {
                 const wrong = 'Incorrect username or password.';

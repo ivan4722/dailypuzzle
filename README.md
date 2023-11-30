@@ -61,10 +61,10 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 
 (__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
 
-* (3 points) Social media API, email notification API, date/time API
+* (2 points) Twitter API
     * I'm going to use the twitter API to post when a user solves a puzzle.
-    * I'm also going to use a email API to email users to remind them to try the new problem if they sign up with email.
-    * I'm also going to use a date/time API so that the puzzle is posted at the same time everyday.
+* (1 point) Luxon API 
+    * I'm also going to use Luxon so that the puzzle is posted at the same time everyday (EST Time)
 * (2 points) SemanticUI
     * I want my website to be aesthetically pleasing, so I will use semantic UI custom css to do so.
 * (3 points) Perform client side form validation using custom JavaScript or JavaScript library
@@ -87,3 +87,4 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 2. [reactjs examples](https://legacy.reactjs.org/community/examples.html)
 3. [form verification through the dom](https://www.w3schools.com/jsref/dom_obj_form.asp)
 4. [twitter API](https://developer.twitter.com/en/docs/twitter-api)
+5. [semantic UI css](https://cdnjs.com/libraries/semantic-ui)

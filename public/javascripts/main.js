@@ -38,7 +38,8 @@ function containsLowercase(password)
     }
     return false;
 }
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () 
+{
     document.getElementById('registrationForm').addEventListener('submit', function (event) {
         event.preventDefault();
         let isValid = validateForm();
@@ -54,13 +55,14 @@ document.addEventListener('DOMContentLoaded', function () {
         let isValid = true; 
         document.getElementById('usernameError').innerHTML = '';
         document.getElementById('passwordError').innerHTML = '';
-        if (!validUsername(username)) {
+        if (!validUsername(username)) 
+        {
             displayErrorMessage('Username can only consist of letters, and numbers.');
             isValid = false; 
         }
 
-        // Validate password
-        if (password.trim().length < 10 || !containsLowercase(password) || !containsUppercase(password)) {
+        if (password.trim().length < 10 || !containsLowercase(password) || !containsUppercase(password)) 
+        {
             displayErrorMessage('Password must be at least 10 characters, and consist of uppercase and lowercase letters.');
             isValid = false; 
         }
@@ -72,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
         errorElement.className = 'ui negative message';
         errorElement.innerHTML = '<div class="header">Error</div><p>' + message + '</p>';
 
-        // Append the error message to the form
         let form = document.getElementById('registrationForm');
         form.insertBefore(errorElement, form.firstChild);
     }

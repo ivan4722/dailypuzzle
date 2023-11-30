@@ -5,7 +5,15 @@
 </head>
 <body>
     <h1>Leaderboard</h1>
+
     <div class = "ui container">
+        <form class="ui form" method="GET" action="">
+            <div class="field">
+            <label>Search by username:</label>
+            <input type="text" name="name" placeholder="">
+            </div>
+            <button class="ui button" type="submit">search</button>
+        </form>
         <div class="ui celled list">
         {{#each leaderboard}}
             <div class="item">
