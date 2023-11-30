@@ -4,7 +4,6 @@
 module load gcc-11.2  # Add other module load commands as needed
 
 # Navigate to your application directory
-cd /path/to/your/application
+/usr/local/lib/node_modules/pm2/bin/pm2 reload all
 
-# Start your application using pm2
-pm2 start your_app_start_command --name YourAppName
+
