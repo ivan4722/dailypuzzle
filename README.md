@@ -61,7 +61,7 @@ https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blo
 
 (__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
 
-* (2 points) Twitter API
+* (3 points) Twitter API
     * I'm going to use the twitter API to post when a user solves a puzzle.
 * (1 point) Luxon API 
     * I'm also going to use Luxon so that the puzzle is posted at the same time everyday (EST Time)
