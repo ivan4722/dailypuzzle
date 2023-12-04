@@ -21,7 +21,7 @@ An Example User:
 {
   username: "funusername",
   password: password123
-  bestStreak: // an integer storing the user's best streak
+  totalSolved: // an integer storing the user's best streak
   solved: // a String array storing dates of which puzzles that this user has solved
 }
 ```
