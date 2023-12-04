@@ -20,7 +20,7 @@ An Example User:
 ```javascript
 {
   username: "funusername",
-  hash: // a password hash,
+  password: password123
   bestStreak: // an integer storing the user's best streak
   solved: // a String array storing dates of which puzzles that this user has solved
 }
