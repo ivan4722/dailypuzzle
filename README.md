@@ -8,7 +8,7 @@ Similarly to wordle, whoever visits the website will be prompted with a daily pu
 
 Check out the website here: http://linserv1.cims.nyu.edu:24709/
 
-The site will let users sign in to track their scores, with total puzzles solved, and best streak. There is also a leaderboard with current best streak and most problems solved. Inspiration was taken from https://www.janestreet.com/puzzles/current-puzzle/, however I want to make the puzzle more solvable and quickly to solve, while having it posted every day rather than every month. 
+The site will let users sign in to track their scores, with total puzzles solved, and best streak. There is also a leaderboard with current best streak and most problems solved. Inspiration was taken from wordle and https://www.janestreet.com/puzzles/current-puzzle/, however I want to make the puzzle more solvable and quickly to solve, while having it posted every day rather than every month. 
 
 There will also be a page to see past puzzles for each day, along with the solutions. 
 
