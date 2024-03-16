@@ -6,7 +6,7 @@
 
 Similarly to wordle, whoever visits the website will be prompted with a daily puzzle, and a new puzzle will be posted every day at the same time.
 
-Check out the website here: http://linserv1.cims.nyu.edu:24709/
+Check out the website here: http://3.21.171.71:4000/
 
 The site will let users sign in to track their scores, with total puzzles solved, and best streak. There is also a leaderboard with current best streak and most problems solved. Inspiration was taken from wordle and https://www.janestreet.com/puzzles/current-puzzle/, however I want to make the puzzle more solvable and quickly to solve, while having it posted every day rather than every month. 
 
