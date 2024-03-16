@@ -32,20 +32,6 @@ Example list:
 ```javascript
 ["10-30-2023","10-31-2023", "11-2-2023"]
 ```
-
-
-## [Link to Commented First Draft Schema](db.mjs) 
-
-https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-ivan4722/blob/master/db.mjs
-
-## Wireframes
-
-![alt text](https://media.discordapp.net/attachments/895509152028319744/1179912156251160596/IMG_2472.jpg?ex=657b81d3&is=65690cd3&hm=b55b263ef36bb80f01f7d24eaf53503e1bcb09f946f4a7f3d48bc91e314d7939&=&format=webp&width=634&height=846)
-
-## Site map
-
-![alt text](https://media.discordapp.net/attachments/895509152028319744/1179912155622023270/IMG_2471.jpg?ex=657b81d3&is=65690cd3&hm=c5ed6e9fc4430d18cd7f27c99652010ebcbcddf4ee163b2800989704a89309c8&=&format=webp&width=634&height=846)
-
 ## User Stories or Use Cases
 
 (__TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://en.wikipedia.org/wiki/Use_case))
