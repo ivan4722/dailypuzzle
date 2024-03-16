@@ -60,7 +60,7 @@ answers.set('031924', "175760000");
 answers.set('032024', "1/3");
 answers.set('032124', "0.41");
 
-
+console.log("running");
 
 // set up express static
 import url from 'url';
@@ -220,5 +220,9 @@ app.get('/thankyou', (req,res)=>
 {
     res.render('thankyou');
 })
+const port12 = process.env.PORT || 3000;
 
-app.listen(process.env.PORT ?? 3000);
+app.listen(port12, () => {
+  console.log(`now listening on port ${port12}`);
+});
+
