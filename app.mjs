@@ -22,43 +22,43 @@ const questions = new Map();
 //questions from Introduction to Counting & Probability by David Patrick
 //and https://www.northsouth.org/app11/docs/coaching/docs/Solutions%20to%20Pre-Test_AMC_AIME%20PrepClub.pdf
 
-questions.set('030524', "In how many ways can a President and a Vice-President be chosen from a group of 4 people? (assuming that the president and the vice president cannot be the same person)");
-questions.set('030624', "Coach is preparing a 5 person starting line up for his team. There are 12 total players, and 2 all star players from last year Chris and Andrew are guaranteed a spot on the team. How many starting lineups are possible?");
-questions.set('030724', "15 students in a chemistry class have lab every week. Each week, they are randomly divided into 5 groups of 3 students each. What is the probability that 3 students, Bob, Andrew, and Sally are in the same lab group this week? Enter your answer as a simplfied fraction.");
-questions.set('030824', "My friend and I are hoping to meet for lunch. We each arrive at the restaurant at a random time between 12pm and 1pm, stay for 15 minutes, and leave (if we don't see each other). What is the probability we will meet each other while at the restaurant? For example, If I show up at 12:10 and my friend shows up at 12:19, we will meet. However, if I arrive at 12:50 and my friend shows up at 12:20, we will not meet. Enter your answer as a simplified fraction.");
-questions.set('030924', "What is the probability that a random rearrangement of the letters in the word \"MATHEMATICS\" will begin with the letters \"MATH\"? Enter your answer as a simplified fraction.");
-questions.set('031024', "A bag has 4 red and 6 blue marbles. A marble is selected and not replaced, then a second is selected. What is the probability that both are the same color? Enter your answer as a simplified fraction.");
-questions.set('031124', "6 points are placed evenly around a circle labeled A,B,C,D,E, and F at random. What is the probability that two triangles ABC and DEF do not overlap? Enter your answer as a simplified fraction.");
-questions.set('031224', "How many distinct arrangements are there for the word TATTER?");
-questions.set('031324', "How many distinct arrangements are there for the word PAPA?");
-questions.set('031424', "How many 4-digit numbers have only odd digits?");
-questions.set('031524', "A certain two-digit number is equal to twice the sum of its digits. What is the product of its digits?");
-questions.set('031624', "A police department in a small city consists of 10 officers. If the department policy is to have 5 of the officers patrolling the streets, 2 of the officers working full time at the station, and 3 of the officers on reserve at the station, how many different divisions of the 10 officers into the 3 groups are possible?");
-questions.set('031724', "Coach is preparing a 5 person starting line up for his team. There are 12 total players, and 2 all-star players from last year, Chris and Andrew, are guaranteed a spot on the team. How many starting lineups are possible?");
-questions.set('031824', "A committee of 3 is to be formed from a group of 20 people. How many different committees are possible?");
-questions.set('031924', "How many different 7-place license plates are possible if the first 3 places are to be occupied by letters and the final 4 by numbers?");
-questions.set('032024', "Suppose that we have 3 cards that are identical in form, except that both sides of the first card are colored red, both sides of the second card are colored black, and one side of the third card is colored red and the other side black. The 3 cards are mixed up in a hat, and 1 card is randomly selected and put down on the ground. If the upper side of the chosen card is colored red, what is the probability that the other side is colored black?");
-questions.set('032124', "A bin contains 3 types of disposable flashlights. The probability that a type 1 flashlight will give more than 100 hours of use is .7, with the corresponding probabilities for type 2 and type 3 flashlights being .4 and .3, respectively. Suppose that 20 percent of the flashlights in the bin are type 1, 30 percent are type 2, and 50 percent are type 3. What is the probability that a randomly chosen flashlight will give more than 100 hours of use? Enter a decimal.");
+questions.set('031624', "In how many ways can a President and a Vice-President be chosen from a group of 4 people? (assuming that the president and the vice president cannot be the same person)");
+questions.set('031724', "Coach is preparing a 5 person starting line up for his team. There are 12 total players, and 2 all star players from last year Chris and Andrew are guaranteed a spot on the team. How many starting lineups are possible?");
+questions.set('031824', "15 students in a chemistry class have lab every week. Each week, they are randomly divided into 5 groups of 3 students each. What is the probability that 3 students, Bob, Andrew, and Sally are in the same lab group this week? Enter your answer as a simplfied fraction.");
+questions.set('031924', "My friend and I are hoping to meet for lunch. We each arrive at the restaurant at a random time between 12pm and 1pm, stay for 15 minutes, and leave (if we don't see each other). What is the probability we will meet each other while at the restaurant? For example, If I show up at 12:10 and my friend shows up at 12:19, we will meet. However, if I arrive at 12:50 and my friend shows up at 12:20, we will not meet. Enter your answer as a simplified fraction.");
+questions.set('032024', "What is the probability that a random rearrangement of the letters in the word \"MATHEMATICS\" will begin with the letters \"MATH\"? Enter your answer as a simplified fraction.");
+questions.set('032124', "A bag has 4 red and 6 blue marbles. A marble is selected and not replaced, then a second is selected. What is the probability that both are the same color? Enter your answer as a simplified fraction.");
+questions.set('032224', "6 points are placed evenly around a circle labeled A,B,C,D,E, and F at random. What is the probability that two triangles ABC and DEF do not overlap? Enter your answer as a simplified fraction.");
+questions.set('032324', "How many distinct arrangements are there for the word TATTER?");
+questions.set('032424', "How many distinct arrangements are there for the word PAPA?");
+questions.set('032524', "How many 4-digit numbers have only odd digits?");
+questions.set('032624', "A certain two-digit number is equal to twice the sum of its digits. What is the product of its digits?");
+questions.set('032724', "A police department in a small city consists of 10 officers. If the department policy is to have 5 of the officers patrolling the streets, 2 of the officers working full time at the station, and 3 of the officers on reserve at the station, how many different divisions of the 10 officers into the 3 groups are possible?");
+questions.set('032824', "Coach is preparing a 5 person starting line up for his team. There are 12 total players, and 2 all-star players from last year, Chris and Andrew, are guaranteed a spot on the team. How many starting lineups are possible?");
+questions.set('032924', "A committee of 3 is to be formed from a group of 20 people. How many different committees are possible?");
+questions.set('033024', "How many different 7-place license plates are possible if the first 3 places are to be occupied by letters and the final 4 by numbers?");
+questions.set('033124', "Suppose that we have 3 cards that are identical in form, except that both sides of the first card are colored red, both sides of the second card are colored black, and one side of the third card is colored red and the other side black. The 3 cards are mixed up in a hat, and 1 card is randomly selected and put down on the ground. If the upper side of the chosen card is colored red, what is the probability that the other side is colored black?");
+questions.set('040124', "A bin contains 3 types of disposable flashlights. The probability that a type 1 flashlight will give more than 100 hours of use is .7, with the corresponding probabilities for type 2 and type 3 flashlights being .4 and .3, respectively. Suppose that 20 percent of the flashlights in the bin are type 1, 30 percent are type 2, and 50 percent are type 3. What is the probability that a randomly chosen flashlight will give more than 100 hours of use? Enter a decimal.");
 
 const answers = new Map();
 
-answers.set('030524', "12");
-answers.set('030624', "120");
-answers.set('030724', "1/91");
-answers.set('030824', "7/16");
-answers.set('030924', "1/990");
-answers.set('031024', "7/15");
-answers.set('031124', "3/10");
-answers.set('031224', "120");
-answers.set('031324', "6");
-answers.set('031424', "625");
-answers.set('031524', "8");
-answers.set('031624', "2520");
-answers.set('031724', "252");
-answers.set('031824', "1140");
-answers.set('031924', "175760000");
-answers.set('032024', "1/3");
-answers.set('032124', "0.41");
+answers.set('031624', "12");
+answers.set('031724', "120");
+answers.set('031824', "1/91");
+answers.set('031924', "7/16");
+answers.set('032024', "1/990");
+answers.set('032124', "3/10");
+answers.set('032224', "120");
+answers.set('032324', "6");
+answers.set('032424', "625");
+answers.set('032524', "8");
+answers.set('032624', "2520");
+answers.set('032724', "252");
+answers.set('032824', "1140");
+answers.set('032924', "175760000");
+answers.set('033024', "1/3");
+answers.set('033124', "0.41");
+answers.set('040124', "1/91");
 
 console.log("running");
 
